@@ -1,0 +1,80 @@
+/* Kuala Lumpur After Dark - Design Tokens */
+:root {
+  /* Color Palette - Editorial Midnight */
+  --bg-primary: #09090b;
+  --bg-surface: #111115;
+  --bg-elevated: #18181d;
+  --bg-card: #131317;
+  --bg-card-hover: #1a1a20;
+  --bg-input: #15151a;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-active: rgba(168, 85, 247, 0.5);
+
+  /* Typography Colors */
+  --text-primary: #f5f4f0;       /* Warm off-white */
+  --text-secondary: #9c9aa2;     /* Muted grey */
+  --text-tertiary: #6b6973;      /* Darker grey */
+  --text-inverse: #09090b;
+
+  /* Sophisticated Nightlife Accent - Electric Violet */
+  --accent: #9333ea;
+  --accent-hover: #a855f7;
+  --accent-light: #c084fc;
+  --accent-glow: rgba(147, 51, 234, 0.25);
+  --accent-surface: rgba(147, 51, 234, 0.12);
+  --accent-border: rgba(168, 85, 247, 0.35);
+
+  /* Functional Status */
+  --status-open: #34d399;        /* Subtle emerald for open now */
+  --status-open-bg: rgba(52, 211, 153, 0.12);
+  --status-closing: #fbbf24;
+  --status-closed: #71717a;
+
+  /* Typography */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Layout Containers */
+  --max-width: 1400px;
+  --header-height: 72px;
+  --bottom-nav-height: 64px;
+
+  /* Border Radii - Editorial, crisp, not excessively bubbly */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 20px rgba(147, 51, 234, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-Index */
+  --z-nav: 100;
+  --z-sticky: 90;
+  --z-modal: 200;
+  --z-toast: 300;
+}

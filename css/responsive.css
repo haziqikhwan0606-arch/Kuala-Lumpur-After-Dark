@@ -1,0 +1,279 @@
+/* Kuala Lumpur After Dark - Responsive Styles & Mobile Navigation */
+
+/* ----------------------------------------------------
+   MOBILE BOTTOM NAVIGATION (Fixed bar on mobile)
+---------------------------------------------------- */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  background: rgba(9, 9, 11, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-medium);
+  z-index: var(--z-nav);
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.4rem;
+  flex: 1;
+  text-align: center;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.bottom-nav-item.active {
+  color: var(--accent-light);
+}
+
+.bottom-nav-item svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.bottom-nav-badge {
+  position: absolute;
+  top: 2px;
+  right: calc(50% - 16px);
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.58rem;
+  font-family: var(--font-mono);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------
+   MOBILE BOTTOM SHEET FOR MAP
+---------------------------------------------------- */
+.mobile-bottom-sheet {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--bottom-nav-height);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-medium);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6);
+  z-index: 80;
+  transform: translateY(105%);
+  transition: transform var(--transition-normal);
+  padding: 1.25rem;
+}
+
+.mobile-bottom-sheet.open {
+  transform: translateY(0);
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border-medium);
+  border-radius: 2px;
+  margin: -0.5rem auto 1rem;
+}
+
+/* Map List Toggle Button on Mobile */
+.map-view-toggle-btn {
+  display: none;
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 85;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+---------------------------------------------------- */
+
+/* Desktop & Laptop (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.25rem;
+  }
+  
+  .guide-card-featured {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-card-featured-img {
+    min-height: 280px;
+  }
+
+  .venue-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .planner-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .planner-summary-card {
+    position: static;
+  }
+
+  .map-sidebar {
+    width: 360px;
+  }
+}
+
+/* Tablet Portrait & Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: var(--bottom-nav-height);
+  }
+
+  .site-header {
+    height: 60px;
+  }
+
+  .nav-links,
+  .location-indicator {
+    display: none;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .map-view-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mobile-bottom-sheet {
+    display: block;
+  }
+
+  .home-hero {
+    min-height: 75vh;
+    padding: 3rem 0;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .map-page-container {
+    flex-direction: column;
+    height: calc(100vh - 60px - var(--bottom-nav-height));
+  }
+
+  .map-sidebar {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .map-sidebar.mobile-active {
+    display: flex;
+  }
+
+  .map-view-wrapper.mobile-hidden {
+    display: none;
+  }
+
+  .timeline-item {
+    gap: 1rem;
+  }
+
+  .timeline-node {
+    width: 34px;
+    height: 34px;
+    font-size: 0.7rem;
+  }
+
+  .timeline-connector-badge {
+    margin-left: 2.75rem;
+  }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .venues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .venue-card-media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .brand-logo {
+    font-size: 1rem;
+  }
+}
